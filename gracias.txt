@@ -1,4 +1,4 @@
-_*“Encantado de ayudarte.”*_
+_*“Encantad@ de ayudarte.”*_
 _*“El agradecimiento es mutuo.”*_
 _*“Gracias a ti por expresar tu gratitud hacia mi.”*_
 _*“Gracias a ti de todo corazón, aunque para ti, mi corazón no tiene fondo.”*_
@@ -6,7 +6,7 @@ _*“Aprendo cada día a mejorar para ofrecerte un mejor servicio”*_
 _*“Para eso están los amigos 🙂”*_
 _*“No hay de qué.”*_
 _*“Hoy por ti mañana por mi.”*_
-_*No es necesario que me des las gracias, estoy para servirte”*_
+_*“No es necesario que me des las gracias”*_
 _*“Es lo menos que puedo hacer por ti”*_
 _*“El agradecimiento, si no se dice, no sirve de nada. Por lo tanto, te agradezco tu agradecimiento 🙂”*_
 _*“De nada sirve sentir agradecimiento y no expresarlo. Gracias a ti también.”*_
@@ -18,3 +18,6 @@ _*“Con muchísimo gusto ☺️”*_
 _*“Gracias a ti”*_
 _*“No hay problemas”*_
 _*“Para eso estoy aquí”*_
+_*“Estoy para servirte”*_
+_*“Sale y vale”*_
+_*“Espero haber sido de ayuda”*_
