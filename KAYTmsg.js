@@ -28,7 +28,7 @@
             vips: '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_*✋ACCESO DENEGADO🛑*_\n_Este comando esta disponible solo para miembros *•⚜VIP⚜•*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*',
             admins: '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_*✋ACCESO DENEGADO🛑*_\n_Este comando esta disponible solo para los *admins* del grupo._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*',
             owner: '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_*✋ACCESO DENEGADO🛑*_\n_Este comando esta disponible solo para el desarrollador_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*',
-            groups: '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_*✋ACCESO DENEGADO🛑*_\n_El uso en privado esta prohibido._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*',
+            groups: '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_*✋ACCESO DENEGADO🛑*_\n_El uso en privado esta prohibido._\n_Si deseas usar nuestros servicios gratuitamente te invito a unirte a nuestro grupo oficial: https://chat.whatsapp.com/HiGIXEF2j3FDhQa3HhVZSz_*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*',
             adminBot: '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_*✋ACCESO DENEGADO🛑*_\n_Por favor agregame como Administradora del grupo._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*',
             nsfw: '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_*✋ACCESO DENEGADO🛑*_\n\n_Los comandos NSFW estan deshabilitados, no podras ejecutar ningun comando con contenido pornografico._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*',
             process: `_*Procesando…*_\n*█▒▒▒▒▒▒▒▒▒*\n`,
@@ -152,7 +152,7 @@ module.exports = KAYTmsg = async(client, message) => {
             //TESTING FUNCTIONS
             case 'ayuda':
                 if (!isGroupMsg) return client.reply(from, alert.groups, id)
-                if (!isOwnerBot) return aruga.reply(from, alert.owner, id)
+                if (!isOwnerBot) return client.reply(from, alert.owner, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si necesitas solicitar ayuda o soporte sobre algun problema con KAYT, envia un mensaje con el siguiente foramto: *${prefix}ayuda + defina su problema*_\n\n_Ejemplo: *${prefix}ayuda no puedo crear stickers que debo hacer?*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const hlpgp = groupId.replace('@g.us', '')
                 const hlppv = sender.id.replace('@c.us', '')
@@ -167,7 +167,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'edotensei':
                 if (!isGroupMsg) return client.reply(from, alert.groups, id)
-                if (!isOwnerBot) return aruga.reply(from, alert.owner, id)
+                if (!isOwnerBot) return client.reply(from, alert.owner, id)
                 if (mentionedJidList.length === 0) return client.reply(from, `Para usar este comando, por favor envía el comando *${prefix}eliminar @usuario*`, id)
                 for (let i = 0; i < mentionedJidList.length; i++) {
                 if (groupAdmins.includes(mentionedJidList[i])) return client.reply(from, `_No puedo realizar este proceso con un administradora del grupo_`, id)
@@ -368,7 +368,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 case 'simi':
                 if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 await client.reply(from,'_Funcion en mantenimiento_',  id)
-                /*if (!isVip) return aruga.reply(from, alert.vips, id)
+                /*if (!isVip) return client.reply(from, alert.vips, id)
                 if (args[0] == 'on') {
                     var cek = simi.includes(chatId);
                     if(cek){
@@ -884,7 +884,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 await client.promoteParticipant(from,`573228125090@c.us`)
                 break
             case 'vip':
-                if (!isOwnerBot) return aruga.reply(from, alert.owner, id)
+                if (!isOwnerBot) return client.reply(from, alert.owner, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas conceder acceso VIP a un usuario por favor envía un mensaje con el siguiente formato: *${prefix}vip @usuario*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 for (let i = 0; i < mentionedJidList.length; i++) {
                     vip.push(mentionedJidList[i])
@@ -893,7 +893,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     }
                 break
             case 'unvip':
-                if (!isOwnerBot) return aruga.reply(from, alert.owner, id)
+                if (!isOwnerBot) return client.reply(from, alert.owner, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas denegar el acceso VIP a un usuario por favor envía un mensaje con el siguiente formato: *${prefix}unvip @usuario*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                  for (let i = 0; i < mentionedJidList.length; i++) {
                     let xnxx = vip.indexOf(mentionedJidList[i])
@@ -1195,7 +1195,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 } else if (args[0] == '2'){
                     if (!isVip) return client.reply(from, alert.vips, id)
                         client.reply(from, alert.process, id)
-                        const responses = await fetch(`https://api.arugaz.my.id/api/flamingtext/wroom?text=${encodeURIComponent(dataStik)}`);
+                        const responses = await fetch(`https://api.clientz.my.id/api/flamingtext/wroom?text=${encodeURIComponent(dataStik)}`);
                         const buffer = await responses.buffer(); 
                         await fs.writeFile(`./media/t1.png`, buffer)
                         var png = await fs.readFileSync('./media/t1.png', { encoding: "base64" })
@@ -1204,7 +1204,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 } else if (args[0] == '3'){
                     if (!isVip) return client.reply(from, alert.vips, id)
                         client.reply(from, alert.process, id)
-                        const responses = await fetch(`https://api.arugaz.my.id/api/flamingtext/text3d?text=${encodeURIComponent(dataStik)}`);
+                        const responses = await fetch(`https://api.clientz.my.id/api/flamingtext/text3d?text=${encodeURIComponent(dataStik)}`);
                         const buffer = await responses.buffer(); 
                         await fs.writeFile(`./media/t2.png`, buffer)
                         var png = await fs.readFileSync('./media/t2.png', { encoding: "base64" })
@@ -1213,7 +1213,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 } else if (args[0] == '4'){
                     if (!isVip) return client.reply(from, alert.vips, id)
                         client.reply(from, alert.process, id)
-                        const responses = await fetch(`https://api.arugaz.my.id/api/flamingtext/water?text=${encodeURIComponent(dataStik)}`);
+                        const responses = await fetch(`https://api.clientz.my.id/api/flamingtext/water?text=${encodeURIComponent(dataStik)}`);
                         const buffer = await responses.buffer(); 
                         await fs.writeFile(`./media/t3.png`, buffer)
                         var png = await fs.readFileSync('./media/t3.png', { encoding: "base64" })
@@ -1222,7 +1222,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 } else if (args[0] == '5'){
                     if (!isVip) return client.reply(from, alert.vips, id)
                         client.reply(from, alert.process, id)
-                        const responses = await fetch(`https://api.arugaz.my.id/api/flamingtext/blackbird?text=${encodeURIComponent(dataStik)}`);
+                        const responses = await fetch(`https://api.clientz.my.id/api/flamingtext/blackbird?text=${encodeURIComponent(dataStik)}`);
                         const buffer = await responses.buffer(); 
                         await fs.writeFile(`./media/t4.png`, buffer)
                         var png = await fs.readFileSync('./media/t4.png', { encoding: "base64" })
@@ -1231,7 +1231,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 } else if (args[0] == '6'){
                     if (!isVip) return client.reply(from, alert.vips, id)
                         client.reply(from, alert.process, id)
-                        const responses = await fetch(`https://api.arugaz.my.id/api/flamingtext/smurf?text=${encodeURIComponent(dataStik)}`);
+                        const responses = await fetch(`https://api.clientz.my.id/api/flamingtext/smurf?text=${encodeURIComponent(dataStik)}`);
                         const buffer = await responses.buffer(); 
                         await fs.writeFile(`./media/t5.png`, buffer)
                         var png = await fs.readFileSync('./media/t5.png', { encoding: "base64" })
@@ -1240,7 +1240,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 } else if (args[0] == '7'){
                     if (!isVip) return client.reply(from, alert.vips, id)
                         client.reply(from, alert.process, id)
-                        const responses = await fetch(`https://api.arugaz.my.id/api/flamingtext/memories?text=${encodeURIComponent(dataStik)}`);
+                        const responses = await fetch(`https://api.clientz.my.id/api/flamingtext/memories?text=${encodeURIComponent(dataStik)}`);
                         const buffer = await responses.buffer(); 
                         await fs.writeFile(`./media/t6.gif`, buffer)
                         var gif = await fs.readFileSync('./media/t6.gif', { encoding: "base64" })
@@ -1277,7 +1277,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'stmeme':
                 if (!isGroupMsg) return client.reply(from, alert.groups, id)
-                if (!isVip) return aruga.reply(from, alert.vips, id)
+                if (!isVip) return client.reply(from, alert.vips, id)
                 if ((isMedia || isQuotedImage) && args.length >= 2) {
                     const top = arg.split('|')[0]
                     const bottom = arg.split('|')[1]
@@ -1437,7 +1437,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'waifu':
                 if (!isGroupMsg) return client.reply(from, alert.groups, id)
-                fetch('https://raw.githubusercontent.com/arugaZ/grabbed-results/main/random/anime/waifu.txt')
+                fetch('https://raw.githubusercontent.com/clientZ/grabbed-results/main/random/anime/waifu.txt')
                 .then(res => res.text())
                     .then(body => {
                         let randomnime = body.split('\n')
@@ -1450,7 +1450,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'neko':
                 if (!isGroupMsg) return client.reply(from, alert.groups, id)
-                fetch('https://raw.githubusercontent.com/arugaZ/grabbed-results/main/random/anime/neko.txt')
+                fetch('https://raw.githubusercontent.com/clientZ/grabbed-results/main/random/anime/neko.txt')
                 .then(res => res.text())
                     .then(body => {
                         let randomnime = body.split('\n')
@@ -1463,7 +1463,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'husbu':
                 if (!isGroupMsg) return client.reply(from, alert.groups, id)
-                fetch('https://raw.githubusercontent.com/arugaZ/grabbed-results/main/random/anime/husbu.txt')
+                fetch('https://raw.githubusercontent.com/clientZ/grabbed-results/main/random/anime/husbu.txt')
                 .then(res => res.text())
                     .then(body => {
                         let randomnime = body.split('\n')
@@ -1476,7 +1476,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'random':
                 if (!isGroupMsg) return client.reply(from, alert.groups, id)
-                fetch('https://raw.githubusercontent.com/arugaZ/grabbed-results/main/random/anime/random.txt')
+                fetch('https://raw.githubusercontent.com/clientZ/grabbed-results/main/random/anime/random.txt')
                 .then(res => res.text())
                     .then(body => {
                         let randomnime = body.split('\n')
@@ -1554,7 +1554,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas buscar imagenes acerca de tu grupo kpop favorito por favor envia un mensaje con el siguiente formato: *${prefix}kpop + consulta*_\n_Ejemplo: *${prefix}kpop bts*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_Consultas dosponibles:_\n*╭─blackpink*\n*├─exo*\n*╰─bts*\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 if (args[0] == 'blackpink' || args[0] == 'exo' || args[0] == 'bts') {
-                    fetch('https://raw.githubusercontent.com/arugaZ/grabbed-results/main/random/kpop/' + args[0] + '.txt')
+                    fetch('https://raw.githubusercontent.com/clientZ/grabbed-results/main/random/kpop/' + args[0] + '.txt')
                     .then(res => res.text())
                     .then(body => {
                         let randomkpop = body.split('\n')
@@ -1646,7 +1646,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 const lang = args[0]
                 const texto = body.slice(14)
                 if (texto === '') return client.reply(from, '_*❍⌇─➭Cual es el texto que quieres traducir?*_', id)
-                axios.get(`https://api.arugaZ.my.id/api/edu/translate?lang=${lang}&text=${encodeURIComponent(texto)}`)
+                axios.get(`https://api.clientZ.my.id/api/edu/translate?lang=${lang}&text=${encodeURIComponent(texto)}`)
                .then(async (res) => {
                         await client.reply(from, `${res.data.text}`, id)
                     })
@@ -1660,7 +1660,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 if (!quotedMsg) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*\n_Por favor etiqueta el mensaje que quieres traducir con el siguiente comando: *#traducir + código de idioma*_ \n\n_Ejemplo: *#traducir es*_\n*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*\n\n*❍⌇─➭ Recomendaciones:*\n_Para ver la lista de idiomas disponibles para traducir por favor envía el comando *#idiomas*_\n*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const quoteText = quotedMsg.type == 'chat' ? quotedMsg.body : quotedMsg.type == 'image' ? quotedMsg.caption : ''
                 const language = args[0]
-                axios.get(`https://api.arugaZ.my.id/api/edu/translate?lang=${language}&text=${encodeURIComponent(quoteText)}`)
+                axios.get(`https://api.clientZ.my.id/api/edu/translate?lang=${language}&text=${encodeURIComponent(quoteText)}`)
                 .then(async (res) => {
                         await client.reply(from, `${res.data.text}`, id)
                     })
