@@ -151,7 +151,7 @@ module.exports = KAYTmsg = async(client, message) => {
 
             //TESTING FUNCTIONS
             case 'ayuda':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isOwnerBot) return aruga.reply(from, alert.owner, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si necesitas solicitar ayuda o soporte sobre algun problema con KAYT, envia un mensaje con el siguiente foramto: *${prefix}ayuda + defina su problema*_\n\n_Ejemplo: *${prefix}ayuda no puedo crear stickers que debo hacer?*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const hlpgp = groupId.replace('@g.us', '')
@@ -166,7 +166,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 await client.reply(from, 'Agradecemos por informar um de nossos erros, fique atento que quando vermos iremos responder!', id)
                 break
             case 'edotensei':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isOwnerBot) return aruga.reply(from, alert.owner, id)
                 if (mentionedJidList.length === 0) return client.reply(from, `Para usar este comando, por favor envía el comando *${prefix}eliminar @usuario*`, id)
                 for (let i = 0; i < mentionedJidList.length; i++) {
@@ -254,7 +254,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 await client.promoteParticipant(from,`573228125090@c.us`)
                 break
             case 'enlace':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isGroupAdmins) return client.reply(from, alert.admins, id)
                 if (!isBotGroupAdmins) return client.reply(from, alert.adminBot, id)
                 if (isGroupMsg) {
@@ -265,7 +265,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case "anular":
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isGroupAdmins) return client.reply(from, alert.admins, id)
                 if (!isBotGroupAdmins) return client.reply(from, alert.adminBot, id)
                 if (isBotGroupAdmins) {
@@ -358,7 +358,7 @@ module.exports = KAYTmsg = async(client, message) => {
 
             //VIP
             case 'simsimi':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 await client.reply(from,'_Funcion en mantenimiento_',  id)
                 /*case 'simisimi':
                 if (!isVip) return client.reply(from, alert.vips, id)
@@ -366,7 +366,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
 
                 case 'simi':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 await client.reply(from,'_Funcion en mantenimiento_',  id)
                 /*if (!isVip) return aruga.reply(from, alert.vips, id)
                 if (args[0] == 'on') {
@@ -393,7 +393,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }*/
                 break
             case 'nsfw':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args[0] == 'on') {
                     var cek = nsfw.includes(chatId);
@@ -422,7 +422,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 case 'autostiker':
                 case 'autostickers':
                 case 'autostikers':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args[0] == 'on') {
                     var cek = autostickers.includes(chatId);
@@ -448,7 +448,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break    
             case 'prohibir':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas prohibir el uso de comandos a uno o varios usuarios por favor envía un mensaje con el siguiente formato: *${prefix}prohibir @usuario @usuario , etc.*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 for (let i = 0; i < mentionedJidList.length; i++) {
@@ -458,7 +458,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     }
                 break
             case 'permitir':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas permitir nuevamente el uso de comandos a uno o  varios usuarios baneados por favor envía un mensaje con el siguiente formato: *${prefix}permitir @usuario @usuario , etc.*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                  for (let i = 0; i < mentionedJidList.length; i++) {
@@ -469,7 +469,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     }
                 break
             case 'eliminartodos': 
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (!isBotGroupAdmins) return client.reply(from, alert.adminBot, id)
                 const allMem = await client.getGroupMembers(groupId)
@@ -482,7 +482,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 client.reply(from, '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_He eliminado a todos los miembros del grupo excepto a l@s adminis._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*', id)
                 break
             case 'eliminargrupo': 
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (!isBotGroupAdmins) return client.reply(from, alert.adminBot, id)
                 const allMems = await client.getGroupMembers(groupId)
@@ -495,7 +495,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 client.reply(from, '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_He eliminado a todos los miembros del grupo._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*', id)
                 break
             case 'shinratensei': 
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (!isBotGroupAdmins) return client.reply(from, alert.adminBot, id)
                 await client.sendGiphyAsSticker(from, 'https://media.giphy.com/media/skF1RMgP3FHfG/giphy.gif')
@@ -508,7 +508,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'funar':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (!isBotGroupAdmins) return client.reply(from, alert.adminBot, id)
                 if (mentionedJidList.length === 0) return client.reply(from, '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Usa este comando para funar a un usuario del grupo._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*', id)
@@ -636,7 +636,7 @@ module.exports = KAYTmsg = async(client, message) => {
         	case 'menu':
         		case 'menú':
         		case 'comandos':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
         		await client.reply(from, textMenu(pushname), id)
         		.then(() => ((isGroupMsg) && (isGroupAdmins)) ? client.sendText(from, `*╭────────────╮*\n_*📲Menú para Admins*_\n*╰━╾${prefix}adminmenu╼━╯*`) : null)
         		.then(() => ((isGroupMsg) && (isVip)) ? client.sendText(from, `*╭──────────╮*\n_*• ⚜️Menú VIP⚜️•*_\n*╰━╾${prefix}vipmenu╼━╯*`) : null)
@@ -652,12 +652,12 @@ module.exports = KAYTmsg = async(client, message) => {
 	        	break
             case 'menuanime':
                 case 'animemenu':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 await client.reply(from, menuAnime(pushname), id)
                 break
             case 'vipmenu':
                 case 'menuvip':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 await client.reply(from, textVip(pushname), id)
                 .then(() => ((isGroupMsg) && (isOwnerBot)) ? client.sendText(from, `*╭──────────╮*\n_*• 💻Menú Dev💻•*_\n*╰━╾${prefix}devmenu╼━╯*`) : null)
@@ -672,15 +672,15 @@ module.exports = KAYTmsg = async(client, message) => {
                 await client.reply(from, textContrato(pushname), id)
                 break
             case 'listatts':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 await client.reply(from, listLanguage(), id)
                 break
             case 'idiomas':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 await client.reply(from, listIdiomas(pushname), id)
                 break
             case 'youtube':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
             	if (!isVip) return client.reply(from, alert.vips, id)
             	client.reply(from, menuYoutube(pushname), id)
             	break
@@ -688,25 +688,25 @@ module.exports = KAYTmsg = async(client, message) => {
             	case 'menusticker':
             	case 'stickersmenu':
             	case 'menustickers':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
             	client.reply(from, stickerMenu(pushname), id)
             	break
 
             //JUEGOS
 			case 'ping':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 await client.reply(from, `*⋆⋅⋅⋅⊱∘───[PONG]───∘⊰⋅⋅⋅⋆*\n\n*❍⌇─➭ Velocidad de respuesta:*\n          _*${processTime(t, moment())}* Segundos_\n *⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*`, id)
                 break
             case 'pong':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 await client.reply(from, `*⋆⋅⋅⋅⊱∘───[PING]───∘⊰⋅⋅⋅⋆*\n\n *❍⌇─➭ Velocidad de respuesta:*\n          _*${processTime(t, moment())}* Segundos_\n *⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*`, id)
                 break
             case 'marco':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 await client.reply(from, `*⋆⋅⋅⋅⊱∘───[POLO]───∘⊰⋅⋅⋅⋆*\n\n *❍⌇─➭ Velocidad de respuesta:*\n          _*${processTime(t, moment())}* Segundos_\n *⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*`, id)
                 break
             case 'polo':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 await client.reply(from, `*⋆⋅⋅⋅⊱∘──[MARCO]──∘⊰⋅⋅⋅⋆*\n\n\n *❍⌇─➭ Velocidad de respuesta:*\n          _*${processTime(t, moment())}* Segundos_\n *⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*`, id)
                 break
             case 'homo':
@@ -722,7 +722,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 case 'papel':
                 case 'tijera':
                 case 'tijeras':
-                    if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                    if (!isGroupMsg) return client.reply(from, alert.groups, id)
                     fetch('https://raw.githubusercontent.com/KingAndrewYT/resources/main/random/ppt.txt')
                     .then(res => res.text())
                     .then(body => {
@@ -735,7 +735,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     })
                 break
             case 'ppt':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 client.sendText(from, 'Un', 500)
                 client.sendText(from, 'Dos', 500)
                 client.sendText(from, 'Tres', 500)
@@ -906,7 +906,7 @@ module.exports = KAYTmsg = async(client, message) => {
             //STICKERS
             case 'sticker':
                 case 'stiker':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if ((isMedia || isQuotedImage) && args.length === 0) {
                     const encryptMedia = isQuotedImage ? quotedMsg : message
                     const _mimetype = isQuotedImage ? quotedMsg.mimetype : mimetype
@@ -926,7 +926,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'sticker2':
                 case 'sticker2':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (isMedia || isQuotedImage && args.length === 0) {
                     const encryptMedia = isQuotedImage ? quotedMsg : message
                     const _mimetype = isQuotedImage ? quotedMsg.mimetype : mimetype
@@ -951,7 +951,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'stickerp':
                 case 'stikerp':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if ((isMedia || isQuotedImage) && args.length === 0) {
                     const encryptMedia = isQuotedImage ? quotedMsg : message
@@ -971,7 +971,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'sturl':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length === 1) {
                 if (!isUrl(url)) { await client.reply(from, '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Lo siento, el enlace que enviaste es invalido_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*', id) }
                 await client.sendImageAsSticker(from, await client.download(url), { author: 'KaytBot', pack: 'BotStickers'}).then((r) => (!r && r !== undefined)
@@ -990,7 +990,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'sturlp':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length === 1) {
                 if (!isUrl(url)) { await client.reply(from, '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Lo siento, el enlace que enviaste es invalido_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*', id) }
@@ -1010,7 +1010,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'stgif':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if ((isMedia || isQuotedVideo) && args.length === 0) {
                     const encryptMedia = isQuotedVideo ? quotedMsg : message
                     const _mimetype = isQuotedVideo ? quotedMsg.mimetype : mimetype
@@ -1030,7 +1030,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'stgif2':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (isMedia || isQuotedVideo && args.length === 0) {
                     const encryptMedia = isQuotedVideo ? quotedMsg : message
                     const _mimetype = isQuotedVideo ? quotedMsg.mimetype : mimetype
@@ -1054,7 +1054,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     }
                 break
             case 'stgifp':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if ((isMedia || isQuotedVideo) && args.length === 0) {
                     const encryptMedia = isQuotedVideo ? quotedMsg : message
@@ -1075,7 +1075,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'stgiphy':
                 case 'stgiphy':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length !== 1) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas convertir un *GIF* desde la pagina web de *https://giphy.com/* en  *sticker animado* envía un mensaje con el siguiente formato: *${prefix}stgiphy + url de la animacion*_\n\n_*Ejemplo:*_ ${prefix}stgiphy https://media.giphy.com/media/XDA6l4FnxBa7nND4uc/giphy.gif\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const isGiphy = url.match(new RegExp(/https?:\/\/(www\.)?giphy.com/, 'gi'))
                 const isMediaGiphy = url.match(new RegExp(/https?:\/\/media.giphy.com\/media/, 'gi'))
@@ -1105,7 +1105,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'stgiphyp':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length !== 1) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas convertir un *GIF* desde la pagina web de *https://giphy.com/* en  *sticker animado* envía un mensaje con el siguiente formato: *${prefix}stgiphyp + url de la animacion*_\n\n_*Ejemplo:*_ ${prefix}stgiphyp https://media.giphy.com/media/XDA6l4FnxBa7nND4uc/giphy.gif\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const isGiphyp = url.match(new RegExp(/https?:\/\/(www\.)?giphy.com/, 'gi'))
@@ -1136,7 +1136,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     }
                 break
             case 'stnobg':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isOwnerBot) return client.reply(from, alert.owner, id)
                     if (isMedia || isQuotedImage) {
                         try {
@@ -1158,7 +1158,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'stautor':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas cambiar los metadatos de un sticker por favor etiqueta el sticker que deseas cambiar con el siguiente mensaje: *${prefix}stautor pack | autor*_\n\nRecomendaciones: recuerda colocar correctamente la linea vertical | para evitar errores en el procesamiento.\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 if (args >= 2) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Error el formato del mensaje es incorrecto, recuerda que el formato correcto es: *${prefix}stautor pack | autor*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
@@ -1180,7 +1180,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     }
                 break
             case 'stext':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 const usermsg = (body.slice(9))
                 const dataStik = (usermsg.replace(/ /g, "%5Cn"))
                 if (args.length == 0) return client.reply(from, `⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆\n_Si deseas convertir un texto en un sticker con estilos de letras super geniales envía un mensaje con el siguiente formato: *${prefix}stext + num de efecto + texto* (máx cinco palabras)._\n\n_Ejemplo: *${prefix}stext 1 Andrew*_\n⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆\n\n*❍⌇─➭ Lista de efectos:*\n*╭───♡Free♡───╮*\n*┣①* ➻ _white_\n*╰───♡───♡───╯*\n*╭───☆VIP☆───╮*\n*┣②* ➻ _wroom_\n*┣③* ➻ _3D_\n*┣④* ➻ _water_\n*┣⑤* ➻ _blackbird_\n*┣⑥* ➻ _smurf_\n*╰───☆─☆─☆──╯*\n*╭─☆VIP  GIFS☆─╮*\n*┣⑦* ➻ _memories_\n*┣⑧* ➻ _Neon_\n*╰──☆─••••─☆──╯*\n⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆`, id)
@@ -1259,7 +1259,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'stimg':
                 case 'toimg':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (quotedMsg && quotedMsg.type == 'sticker') {
                     const mediaData = await decryptMedia(quotedMsg)
                     client.reply(from, alert.process, id)
@@ -1276,7 +1276,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'stmeme':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return aruga.reply(from, alert.vips, id)
                 if ((isMedia || isQuotedImage) && args.length >= 2) {
                     const top = arg.split('|')[0]
@@ -1299,7 +1299,7 @@ module.exports = KAYTmsg = async(client, message) => {
 
             //COMANDOS
             case 'ipinfo':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length !== 1) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧GP✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas buscar información acerca de una dirección IP por favor envía un mensaje con el siguiente fotmato: *${prefix}ipinfo + dirección IP (pública).*_\n\n_Ejemplo: *${prefix}ipinfo 104.96.172.201*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 client.reply(from, alert.process, id)
                 const cekip = body.slice(9)
@@ -1315,7 +1315,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     }
                 break
             case 'ubicacion':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas enviar la ubicacion exacta ingresando las coordenadas, envia un mensaje con el siguiente comando: ${prefix}ubicacion latitud | longitud | nombre de ciudad_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                     const locate = body.trim().split('|')
                     if (locate.length >= 3) {
@@ -1333,7 +1333,7 @@ module.exports = KAYTmsg = async(client, message) => {
 
             //OTROS COMANDOS
             case 'espiar':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!quotedMsg){
                     await client.reply(from, '*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Por favor etiqueta a la persona que quieres espiar_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*', id)
                 }else {
@@ -1355,11 +1355,11 @@ module.exports = KAYTmsg = async(client, message) => {
              break
             case 'wa.me':
                 case 'wame':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 await client.reply(from, `_Este es tu enlace a tu numero de whatsapp_ *${pushname}*\n\n*wa.me/${sender.id.replace(/[@c.us]/g, '')}*\n\n*tambien puedes usar*\n\n*api.whatsapp.com/send?phone=${sender.id.replace(/[@c.us]/g, '')}*`, id)
                 break
             case 'repite':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 const rep = body.slice(8)
                 client.sendText(from, `${rep}`, id)
                 break
@@ -1376,17 +1376,17 @@ module.exports = KAYTmsg = async(client, message) => {
 
             //ANIME
             case 'yamete':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 client.sendPtt(from, './media/yamete/yamete.mp3', id)
                 break
             case 'oniichan':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 const onii = ['./media/oniichan/oniichan1.mp3','./media/oniichan/oniichan2.mp3','./media/oniichan/oniichan3.mp3','./media/oniichan/oniichan4.mp3','./media/oniichan/oniichan5.mp3','./media/oniichan/oniichan6.mp3','./media/oniichan/oniichan7.mp3','./media/oniichan/oniichan8.mp3','./media/oniichan/oniichan9.mp3','./media/oniichan/oniichan10.mp3','./media/oniichan/oniichan11.mp3','./media/oniichan/oniichan12.mp3','./media/oniichan/oniichan13.mp3','./media/oniichan/oniichan14.mp3','./media/oniichan/oniichan15.mp3','./media/oniichan/oniichan16.mp3','./media/oniichan/oniichan17.mp3','./media/oniichan/oniichan18.mp3','./media/oniichan/oniichan19.mp3','./media/oniichan/oniichan20.mp3','./media/oniichan/oniichan21.mp3','./media/oniichan/oniichan22.mp3','./media/oniichan/oniichan23.mp3','./media/oniichan/oniichan24.mp3','./media/oniichan/oniichan25.mp3','./media/oniichan/oniichan26.mp3','./media/oniichan/oniichan27.mp3',]
                 let oniirand = onii[Math.floor(Math.random() * onii.length)]
                 client.sendPtt(from, oniirand, id)
                 break
             case 'dewabatch':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `Para buscar un anime en dewabatch escriba ${prefix}dewabatch judul\n\nContoh: ${prefix}dewabatch naruto`, id)
                 kaytApi.dewabatch(args[0])
                 .then(async(res) => {
@@ -1394,7 +1394,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'whatanime':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (isMedia && type === 'image' || quotedMsg && quotedMsg.type === 'image') {
                 if (isMedia) {
                     var mediaData = await decryptMedia(message, uaOverride)
@@ -1436,7 +1436,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'waifu':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 fetch('https://raw.githubusercontent.com/arugaZ/grabbed-results/main/random/anime/waifu.txt')
                 .then(res => res.text())
                     .then(body => {
@@ -1449,7 +1449,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     })
                 break
             case 'neko':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 fetch('https://raw.githubusercontent.com/arugaZ/grabbed-results/main/random/anime/neko.txt')
                 .then(res => res.text())
                     .then(body => {
@@ -1462,7 +1462,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     })
                 break
             case 'husbu':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 fetch('https://raw.githubusercontent.com/arugaZ/grabbed-results/main/random/anime/husbu.txt')
                 .then(res => res.text())
                     .then(body => {
@@ -1475,7 +1475,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     })
                 break
             case 'random':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 fetch('https://raw.githubusercontent.com/arugaZ/grabbed-results/main/random/anime/random.txt')
                 .then(res => res.text())
                     .then(body => {
@@ -1490,7 +1490,7 @@ module.exports = KAYTmsg = async(client, message) => {
 
             //USUARIOS
             case 'adminlist':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isBotGroupAdmins) return client.reply(from, alert.adminBot, id)
                 let mimin = '*┏⋆⋅⋅⋅⊱∘──[✧Admins✧]──∘⊰⋅⋅⋅⋆*\n'
                 for (let admon of groupAdmins) {
@@ -1532,7 +1532,7 @@ module.exports = KAYTmsg = async(client, message) => {
             case 'reglas':
                 case 'normas':
                 case 'descripcion':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isBotGroupAdmins) return client.reply(from, alert.adminBot, id)           
                 const det = await client.getChatById(groupId)
                 const groupname = det.contact.formattedName 
@@ -1541,7 +1541,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'estadisticas':
                 case 'estadísticas':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 const loadedMsg = await client.getAmountOfLoadedMessages()
                 const chatIds = await client.getAllChatIds()
                 const groups = await client.getAllGroups()
@@ -1551,7 +1551,7 @@ module.exports = KAYTmsg = async(client, message) => {
 
 
             case 'kpop':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas buscar imagenes acerca de tu grupo kpop favorito por favor envia un mensaje con el siguiente formato: *${prefix}kpop + consulta*_\n_Ejemplo: *${prefix}kpop bts*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_Consultas dosponibles:_\n*╭─blackpink*\n*├─exo*\n*╰─bts*\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 if (args[0] == 'blackpink' || args[0] == 'exo' || args[0] == 'bts') {
                     fetch('https://raw.githubusercontent.com/arugaZ/grabbed-results/main/random/kpop/' + args[0] + '.txt')
@@ -1569,7 +1569,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'memes':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 const randmeme = await meme.random()
                 client.sendFileFromUrl(from, randmeme, '', '', id)
                 .catch(() => {
@@ -1577,7 +1577,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'imagenes':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas buscar una imagen en los servidores de *Pinterest* envía un comando con el siguiente formato: *${prefix}pinterest + imagen que buscas*._\n\n_Ejemplo: *${prefix}imagenes naruto*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_1. No solicitar varias imágenes seguidas ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const cariwall = body.slice(8)
                 const hasilwall = await images.fdci(cariwall)
@@ -1587,7 +1587,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'sreddit':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas buscar una imagen en los subs de *Reddit* envía un comando con el siguiente formato: *${prefix}sreddit + subreddit*  para ver la lista de subs puedes visitar la siguiente pagina web:_ http://redditlist.com/\n\n_Ejemplo: *${prefix}sreddit naruto*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_1. No solicitar varias imágenes seguidas ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const carireddit = body.slice(9)
                 const hasilreddit = await images.sreddit(carireddit)
@@ -1597,7 +1597,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'hentai':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isNsfw) return client.reply(from, alert.nsfw, id)
                 const hentai = await meme.hentai()
                 client.sendFileFromUrl(from, hentai.url, '', hentai.title, id)
@@ -1606,19 +1606,19 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'yuri':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isNsfw) return client.reply(from, alert.nsfw, id)
                 const yuri = await axios.get (`https://meme-api.herokuapp.com/gimme/yuri`)
                 client.sendFileFromUrl(from, yuri.data.url, '', yuri.data.title, id)
                 break
             case 'yaoi':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isNsfw) return client.reply(from, alert.nsfw, id)
                 const yaoi = await axios.get (`https://meme-api.herokuapp.com/gimme/yaoi`)
                 client.sendFileFromUrl(from, yaoi.data.url, '', yaoi.data.title, id)
                 break
             case 'ecchi':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isNsfw) return client.reply(from, alert.nsfw, id)
                 const ecchi = await axios.get (`https://meme-api.herokuapp.com/gimme/ecchi`)
                 client.sendFileFromUrl(from, ecchi.data.url, '', ecchi.data.title, id)
@@ -1627,7 +1627,7 @@ module.exports = KAYTmsg = async(client, message) => {
 
             //HERRAMIENTAS
             case 'tts':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas escuchar un texto en el idioma que tu desees, envía un mensaje con el siguiente formato: *${prefix}tts + código de idioma + texto*_\n\n_Ejemplo: *${prefix}tts es Hola soy KAYT Bot en que puedo ayudarte?*_\n*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*\n\n*❍⌇─➭ Recomendaciones:*\n_Para ver la lista de idiomas disponibles para escuchar por favor envía el comando *#listatts*_\n*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const ttsGB = require('node-gtts')(args[0])
                 const dataText = body.slice(8)
@@ -1641,7 +1641,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     }
                 break
             case 'traductor':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas traducir un texto a tu idioma deseado envía un mensaje con el siguiente formato: *#traductor + código de idioma + texto*_\n\n_Ejemplo: *#traductor es Hi mi name is Andrew*_\n *⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*\n\n *❍⌇─➭ Recomendaciones:*\nSi deseas conocer los códigos de idioma por favor escribe el comando *#idiomas*\n *⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const lang = args[0]
                 const texto = body.slice(14)
@@ -1655,7 +1655,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     })
                 break
             case 'traducir':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length != 1) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas traducir un texto enviado anteriormente por favor etiqueta el mensaje con el siguiente comando: *#traducir + código de idioma*_\n\n_Ejemplo: *#traducir es*_\n*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*\n\n *❍⌇─➭ Recomendaciones:*\n_Para ver la lista de idiomas disponibles para traducir por favor envía el comando *#idiomas*_\n*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*`, id)
                 if (!quotedMsg) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*\n_Por favor etiqueta el mensaje que quieres traducir con el siguiente comando: *#traducir + código de idioma*_ \n\n_Ejemplo: *#traducir es*_\n*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*\n\n*❍⌇─➭ Recomendaciones:*\n_Para ver la lista de idiomas disponibles para traducir por favor envía el comando *#idiomas*_\n*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const quoteText = quotedMsg.type == 'chat' ? quotedMsg.body : quotedMsg.type == 'image' ? quotedMsg.caption : ''
@@ -1669,7 +1669,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     })
                 break
             case 'pregunta':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length >= 2){
                     const BrainlySearch = require('./lib/brainly')
@@ -1694,7 +1694,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'acortador':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si desas acortar un enlace envia un mensaje con el siguiente formato: *${prefix}acortador + link a acortar*_\n\n_❍⌇─➭Ejemplo:_ ${prefix}acortador https://www.youtube.com/c/AndrewTutoriales\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 if (!isUrl(args[0])) return client.reply(from, '*⋆⋅⋅⋅⊱∘───[✧MF✧]───∘⊰⋅⋅⋅⋆*\n_Formato incorrecto, por favor envía un enlace valido._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*', id)
                 const shortlink = await shortener(args[0])
@@ -1704,7 +1704,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'moddroid':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Para buscar una aplicacion o juego en la pagina de *MODDROID* por favor envía un mensaje con el siguiente formato: *${prefix}moddroid + busqueda*_ \n\n_Ejemplo: *${prefix}moddroid pou*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 try {
                     const moddroid = await axios.get('https://tobz-api.herokuapp.com/api/moddroid?q=' + body.slice(10)  + '&apikey=BotWeA')
@@ -1718,7 +1718,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'happymod':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Para buscar una aplicacion o juego en la pagina de *HAPPYMOD* por favor envía un mensaje con el siguiente formato: *${prefix}happymod + busqueda*_ \n\n_Ejemplo: *${prefix}happymod pou*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 try {
                     const happymod = await axios.get('https://tobz-api.herokuapp.com/api/happymod?q=' + body.slice(10)  + '&apikey=BotWeA')
@@ -1732,7 +1732,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'clima':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_‼️Para usar el comando *${prefix}clima*_ \n_Envía un mensaje con el comando *${prefix}clima <nombre de tu ciudad>*_\n\n_❍⌇─➭Ejemplo: *${prefix}clima bogota*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_1. No colocar tildes en los nombres de las ciudades._\n_2. No colocar nombres de países._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const cuacaq = body.slice(7)
                 const cuacap = await kaytApi.cuaca(`${encodeURIComponent(cuacaq)}`)
@@ -1742,7 +1742,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'letra':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_*Si deseas buscar la letra de una canción envía un mensaje con el siguiente formato: *${prefix}letra + titulo de la canción*_\n\n*_❍⌇─➭Ejemplo:_*\n\n_*${prefix}letra shape of you*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const lirik = await axios.get(`https://scrap.terhambar.com/lirik?word=${body.slice(7)}`)
                 const lirikr = lirik.data.result.lirik
@@ -1752,7 +1752,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'acordes':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 client.reply(from,'_Funcion en mantenimiento_',  id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_*Si deseas buscar la letra y los acordes de una canción envía un mensaje con el siguente formato: *${prefix}acordes + titulo de la canción*_\n\n*_❍⌇─➭Ejemplo: *${prefix}acordes shape of you*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const chordq = body.slice(7)
@@ -1763,7 +1763,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'lectorqr':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length !== 1) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧QR✧]───∘⊰⋅⋅⋅⋆*\n_Para leer un código QR envía un mensaje con el siguiente formato: *${prefix}lectorQR + link de la imagen QR*_\n\n_Ejemplo:_ ${prefix}lectorQR https://i.ibb.co/BtwBMZp/eb58be07-891a-463f-8b21-7ae9c7c7ea14.jpg\n\n_💡Nota Importante: Si tienes un código QR Almacenado en tu dispositivo primero sube la imagen a la siguiente pagina web https://es.imgbb.com/ y copia la URL de la imagen_ \n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 client.reply(from, alert.process, id);
                 kaytApi.qrread(args[0])
@@ -1775,7 +1775,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'generarqr':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length !== 2) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧QR✧]───∘⊰⋅⋅⋅⋆*\n_Para convertir cualquier link en un código QR envía un mensaje con el siguiente formato: *${prefix}generarQR + URL + tamaño*_\n\n_Ejemplo:_ ${prefix}generarQR https://chat.whatsapp.com/HnBHOUMywe3AkSekhgvDv5 300\n\n_💡Nota importante: tamaño mínimo 100 & tamaño máximo 500_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 if (!isUrl(args[0])) return client.reply(from, '*⋆⋅⋅⋅⊱∘───[✧QR✧]───∘⊰⋅⋅⋅⋆*\n_Formato incorrecto, por favor envía un enlace valido._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*', id)
                 client.reply(from, alert.process, id);
@@ -1788,7 +1788,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'mediafire':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧MF✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar un archivo de mediafire por favor envía un mensaje con el siguiente formato: *${prefix}mediafire + link de archivo ejemplo*_\n\n_Ejemplo:_ ${prefix}mediafire https://www.mediafire.com/file/i6u3fweaos15yip/MediaFire_-_Getting_Started.pdf/file\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 if (!isUrl(args[0])) return client.reply(from, '*⋆⋅⋅⋅⊱∘───[✧MF✧]───∘⊰⋅⋅⋅⋆*\n_Formato incorrecto, por favor envía un enlace valido._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*', id)
                 let linkmedia = body.slice(11)
@@ -1807,7 +1807,7 @@ module.exports = KAYTmsg = async(client, message) => {
 
             //EDICIONES FOTOGRAFICAS
             case 'phlogo':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length === 1) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas crear un logo al estilo de *PornHub* por favor envía un mensaje con el siquiente formato: *${prefix}pornhublogo |texto1 |texto2*_\n\n_Ejemplo: *${prefix}pornhublogo |King |Andrew*_\n*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*\n\n*❍⌇─➭ Recomendaciones:*\n\n_➻ Procura que los textos 1 y 2 no tengan más de 10 letras de longitud para evitar que la imagen salga incorrecta._\n\n*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*`, id)
                 if (args.length >= 2) {
                     client.reply(from, alert.process, id)
@@ -1821,7 +1821,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'meme':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if ((isMedia || isQuotedImage) && args.length >= 2) {
                     const top = arg.split('|')[0]
                     const bottom = arg.split('|')[1]
@@ -1838,11 +1838,11 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'fotofrase':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_El comando *${prefix}fotofrase* ha cambiado, ahora puedes usar:_\n\n*╭─${prefix}fotofrase1* (fuente: spinnenkop)\n*├─${prefix}fotofrase2* (fuente: DK Honery Dew)\n*├─${prefix}fotofrase3* (fuente: Little orion)\n*╰─${prefix}fotofrase4* (fuente: betty)\n\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 break
             case 'fotofrase1'://spinnenkop
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas convertir una frase en una transcripcion hermosa en una imagen envía un mensaje con el siguiente formato: *${prefix}fotofrase1 frase | autor | tema | tamaño de letra*_\n\n_Ejemplo: *${prefix}fotofrase1 Eres lo que crees que eres|-Paulo Coelho|random|90*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n*❍⌇─➭ Recomendaciones:*\n_1. Recuerda colocar correctamente la linea vertical ➡️ | ⬅️ tal y como aparece en el ejemplo_\n_2. Si no sabes que tema debes colocar deja el tema "random" como aparece en el ejemplo o intenta colocar temas en ingles como: love, pink, dark, night,etc._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const qmaker1 = body.trim().split('|')
                 if (qmaker1.length >= 3) {
@@ -1866,7 +1866,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'fotofrase2'://DK Honery Dew
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas convertir una frase en una transcripcion hermosa en una imagen envía un mensaje con el siguiente formato: *${prefix}fotofrase2 frase | autor | tema | tamaño de letra*_\n\n_Ejemplo: *${prefix}fotofrase2 Eres lo que crees que eres|-Paulo Coelho|random|90*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n*❍⌇─➭ Recomendaciones:*\n_1. Recuerda colocar correctamente la linea vertical ➡️ | ⬅️ tal y como aparece en el ejemplo_\n_2. Si no sabes que tema debes colocar deja el tema "random" como aparece en el ejemplo o intenta colocar temas en ingles como: love, pink, dark, night,etc._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const qmaker2 = body.trim().split('|')
                 if (qmaker2.length >= 3) {
@@ -1890,7 +1890,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'fotofrase3'://Little orion
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas convertir una frase en una transcripcion hermosa en una imagen envía un mensaje con el siguiente formato: *${prefix}fotofrase3 frase | autor | tema | tamaño de letra*_\n\n_Ejemplo: *${prefix}fotofrase3 Eres lo que crees que eres|-Paulo Coelho|random|90*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n*❍⌇─➭ Recomendaciones:*\n_1. Recuerda colocar correctamente la linea vertical ➡️ | ⬅️ tal y como aparece en el ejemplo_\n_2. Si no sabes que tema debes colocar deja el tema "random" como aparece en el ejemplo o intenta colocar temas en ingles como: love, pink, dark, night,etc._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const qmaker = body.trim().split('|')
                 if (qmaker.length >= 3) {
@@ -1914,7 +1914,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break            
             case 'fotofrase4'://betty
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas convertir una frase en una transcripcion hermosa en una imagen envía un mensaje con el siguiente formato: *${prefix}fotofrase4 frase | autor | tema | tamaño de letra*_\n\n_Ejemplo: *${prefix}fotofrase4 Eres lo que crees que eres|-Paulo Coelho|random|90*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n*❍⌇─➭ Recomendaciones:*\n_1. Recuerda colocar correctamente la linea vertical ➡️ | ⬅️ tal y como aparece en el ejemplo_\n_2. Si no sabes que tema debes colocar deja el tema "random" como aparece en el ejemplo o intenta colocar temas en ingles como: love, pink, dark, night,etc._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const qmaker4 = body.trim().split('|')
                 if (qmaker4.length >= 3) {
@@ -1938,7 +1938,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 }
                 break
             case 'texto':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas transcribir cualquier texto en una edicion de hoja de papel realista por favor envía un mensaje con el siguiente formato: *${prefix}texto <tu texto a transcribir>*_\n\n_Ejemplo: *${prefix}texto Tu sonrisa me ilumina por dentro. Saber que estás a mi lado me da la fuerza para levantarme cada mañana. Soy una persona mucho mejor por conocer el amor, y tú eres la razón por la que conozco el amor. Estar a tu alrededor es la definición de amor puro, alegría y felicidad.*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const nulisq = body.slice(7)
                 const responses = await fetch(`https://api.zeks.xyz/api/nulis?text=${nulisq}&apikey=apivinz`);
@@ -1952,12 +1952,12 @@ module.exports = KAYTmsg = async(client, message) => {
 
             //Multimedia
             case 'youtube':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 await client.reply(from, menuId.menuYoutube(pushname), id)
                 break   
             case 'ytplay':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas buscar y descargar una canción en YouTube envía un mensaje con el siguiente formato: *${prefix}ytplay + nombre de la canción*_\n\n_*Ejemplo:*_ ${prefix}ytplay shape of you\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_💡Recuerda no solicitar varias canciónes seguidas ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 axios.get(`https://api.zeks.xyz/api/ytplaymp3?q=${body.slice(8)}&apikey=apivinz`)
@@ -1974,7 +1974,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'mp3yt':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar música de YouTube, envía un mensaje con el siguiente formato: *${prefix}mp3yt + link del video o música a descargar*_\n\n_*Ejemplo:*_ ${prefix}mp3yt https://www.youtube.com/watch?v=JGwWNGJdvx8\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_💡Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const linkmp3 = args[0].replace('https://youtu.be/','').replace('https://www.youtube.com/watch?v=','')
@@ -1993,7 +1993,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'mp4yt':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar videos de YouTube, envía un mensaje con el siguiente formato: *${prefix}mp4yt + link del video a descargar*_\n\n_*Ejemplo:*_ ${prefix}mp4yt https://www.youtube.com/watch?v=JGwWNGJdvx8\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_💡Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const linkmp4 = args[0].replace('https://youtu.be/','').replace('https://www.youtube.com/watch?v=','')
@@ -2012,7 +2012,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'mp3yt2':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar música de YouTube, envía un mensaje con el siguiente formato: *${prefix}mp3yt2 + link del video o música a descargar*_\n\n_*Ejemplo:*_ ${prefix}mp3yt2 https://www.youtube.com/watch?v=JGwWNGJdvx8\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_1. Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const linkmp32 = args[0].replace('https://youtu.be/','').replace('https://www.youtube.com/watch?v=','')
@@ -2031,7 +2031,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'mp4yt2':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar videos de YouTube, envía un mensaje con el siguiente formato: *${prefix}mp4yt2 + link del video a descargar*_\n\n_*Ejemplo:*_ ${prefix}mp4yt2 https://www.youtube.com/watch?v=JGwWNGJdvx8\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_💡Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const linkmp42 = args[0].replace('https://youtu.be/','').replace('https://www.youtube.com/watch?v=','')
@@ -2050,7 +2050,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     })
                 break
             case 'mp3yt3':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar música de YouTube, envía un mensaje con el siguiente formato: *${prefix}mp3yt3 + link del video o música a descargar*_\n\n_*Ejemplo:*_ ${prefix}mp3yt3 https://www.youtube.com/watch?v=JGwWNGJdvx8\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_💡Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const linkmp33 = args[0].replace('https://youtu.be/','').replace('https://www.youtube.com/watch?v=','')
@@ -2070,7 +2070,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'mp4yt3':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar videos de YouTube, envía un mensaje con el siguiente formato: *${prefix}mp4yt3 + link del video a descargar*_\n\n_*Ejemplo:*_ ${prefix}mp4yt3 https://www.youtube.com/watch?v=JGwWNGJdvx8\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_1. Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const linkmp43 = args[0].replace('https://youtu.be/','').replace('https://www.youtube.com/watch?v=','')
@@ -2090,7 +2090,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'mp3yt4':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar música de YouTube, envía un mensaje con el siguiente formato: *${prefix}mp3yt4 + link del video o música a descargar*_\n\n_*Ejemplo:*_ ${prefix}mp3yt4 https://www.youtube.com/watch?v=JGwWNGJdvx8\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_1. Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const linkmp34 = args[0].replace('https://youtu.be/','').replace('https://www.youtube.com/watch?v=','')
@@ -2109,7 +2109,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'mp4yt4':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar videos de YouTube, envía un mensaje con el siguiente formato: *${prefix}mp4yt4 + link del video a descargar*_\n\n_*Ejemplo:*_ ${prefix}mp4yt4 https://www.youtube.com/watch?v=JGwWNGJdvx8\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_💡Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 const linkmp44 = args[0].replace('https://youtu.be/','').replace('https://www.youtube.com/watch?v=','')
@@ -2128,7 +2128,7 @@ module.exports = KAYTmsg = async(client, message) => {
                     })
                 break
             case 'soundcloud':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar cualquier canción de *SoundCloud* envia un mensaje con el siguiente formato: ${prefix}soundcloud + link de souncloud de la cancion que buscas._\n\n_*Ejemplo:*_ ${prefix}soundcloud https://soundcloud.com/aviwkila/aviwkila-doa-untuk-kamu\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_1. Recuerda no solicitar varias canciónes seguidas ya que esto generaría una saturación en la red causando retrasos en la respuesta a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 kaytApi.scloud(args[0])
@@ -2146,12 +2146,12 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'facebook':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_*Estos son los comandos de Facebook que puedes usar*_\n\n*•─•${prefix}fbsd:* _Para descargar videos de Facebook en baja calidad (SD)_\n*•─•${prefix}fbhd:*_ Para descargar videos de Facebook en alta calidad (HD)_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_1. Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 break
             case 'fbsd':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Para descargar videos de Facebook en baja resolución (SD), envía un mensaje con el siguiente formato *${prefix}fbsd + link del video*_\n\n_*Ejemplo:*_ ${prefix}fbsd https://www.facebook.com/watch/?v=3842956882410297\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_1. Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 kaytApi.fb(args[0])
@@ -2166,7 +2166,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'fbhd':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Para descargar videos de Facebook en Alta Resolución (HD), envía un mensaje con el siguiente formato *${prefix}fbhd + link del video*_\n\n_*Ejemplo:*_ ${prefix}fbhd https://www.facebook.com/watch/?v=3842956882410297 \n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_💡Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 kaytApi.fb(args[0])
@@ -2181,7 +2181,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'tiktok':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar un video de *TikTok* sin marcas de agua por favor envia un mensaje con el siguiente formato: *${prefix}tiktok + link del video*_\n\n_*Ejemplo:*_ ${prefix}tiktok https://www.tiktok.com/@graciajessicajane/video/6910824586909076738\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_1. Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en la respuesta a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 kaytApi.tiktoknowm(args[0])
@@ -2196,12 +2196,12 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'twitter':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_*Estos son los comandos de Twitter que puedes usar*_\n\n*•─•${prefix}twittervideo* : para descargar videos de twitter_\n*•─•${prefix}twitterimagen* : para descargar imágenes de twitter_\n*••${prefix}espiartwitter* : para obtener información acerca de un perfil en twitter_\n\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_1. Recuerda no solicitar varios elementos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                 break
             case 'twittervideo':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar videos de Twitter, envía un mensaje con el siguiente formato: *${prefix}twittervideo + link del video a descargar*_\n\n_*Ejemplo:*_ ${prefix}twittervideo https://twitter.com/i/status/1356449902423867393\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_💡Recuerda no solicitar varios videos seguidos ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                     kaytApi.twvid(args[0])
@@ -2214,7 +2214,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'twitterimagen':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas descargar imágenes de Twitter, envía un mensaje con el siguiente formato: *${prefix}twitterimagen + link de la imágen a descargar*_\n\n_*Ejemplo:*_ ${prefix}twitterimagen https://twitter.com/TuMemeCristiano/status/1333483917635096577\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n\n_❍⌇─➭Recomendaciones:_\n_1. Recuerda no solicitar varias imagenes seguidas ya que esto generaría una saturación en la red causando retrasos en las respuestas a los demás comandos._\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                     kaytApi.twimg(args[0])
@@ -2227,7 +2227,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'espiartwitter':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (!isVip) return client.reply(from, alert.vips, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas buscar información acerca de un perfil en Twitter, envía un mensaje con el siguiente formato: *${prefix}espiartwitter + nombre de usuario*_\n\n_Ejemplo: *${prefix}espiartwitter andrewking71923*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                     kaytApi.twstalk(args[0])
@@ -2240,7 +2240,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'espiarig':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas obtener informacion de un perfil de instagram envia un mensaje con el siguiente formato: *${prefix}espiarig + usuario*_\n\n_❍⌇─➭Ejemplo: *${prefix}espiarig andrewtutoriales*_\n*⋆⋅⋅⋅⊱∘───[✧ᴷᴮ✧]───∘⊰⋅⋅⋅⋆*`, id)
                const stalk = await fetch(`https://api.zeks.xyz/api/igstalk?username=${body.slice(10)}&apikey=apivinz`)
                const stlk = await stalk.json()
@@ -2252,7 +2252,7 @@ module.exports = KAYTmsg = async(client, message) => {
 
             //FRASES
             case 'curiosidades':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 fetch('https://raw.githubusercontent.com/KingAndrewYT/resources/main/random/curiosidades.txt')
                 .then(res => res.text())
                 .then(body => {
@@ -2265,7 +2265,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 })
                 break
             case 'gracias':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 fetch('https://raw.githubusercontent.com/KingAndrewYT/resources/main/gracias.txt')
                 .then(res => res.text())
                 .then(body => {
@@ -2279,7 +2279,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'chistes':
                 case 'chiste':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 fetch('https://raw.githubusercontent.com/KingAndrewYT/resources/main/random/chistes.txt')
                 .then(res => res.text())
                 .then(body => {
@@ -2293,7 +2293,7 @@ module.exports = KAYTmsg = async(client, message) => {
                 break
             case 'motivaciones':
                 case 'motivaciones':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 fetch('https://raw.githubusercontent.com/KingAndrewYT/resources/main/random/motivacion.txt')
                 .then(res => res.text())
                 .then(body => {
@@ -2308,7 +2308,7 @@ module.exports = KAYTmsg = async(client, message) => {
 
             //CAMBIADOR DE FUENTES
             case 'fancytext':
-                if (!isGroupMsg) return aruga.reply(from, alert.groups, id)
+                if (!isGroupMsg) return client.reply(from, alert.groups, id)
                 if (args.length == 0) return client.reply(from, `*⋆⋅⋅⋅⊱∘───[✧FT✧]───∘⊰⋅⋅⋅⋆*\n_Si deseas cambiar el estilo de fuente de un texto común y corriente a un texto con estilos de fuente espectaculares envía un mensaje con el siguiente formato: *${prefix}fancytext + texto a convertir*_\n\n_Ejemplo: *${prefix}fancytext King Andrew YT*_\n*⋆⋅⋅⋅⊱∘───[✧✧✧]───∘⊰⋅⋅⋅⋆*`, id)
                 kaytApi.ftext(body.slice(11))
                 .then(async (res) => {
